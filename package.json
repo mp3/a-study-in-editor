@@ -5,14 +5,25 @@
   "repository": "git@github.com:mp3/a-study-in-editor.git",
   "author": "mp3 <im.in.a.coma.xxx@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "parcel src/index.html --open",
+    "build": "parcel build src/index.html",
+    "typecheck": "tsc -p . --noEmit",
+    "test": "jest",
+    "deploy": "netlify deploy -d dist --prod"
+  },
   "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
     "@types/node": "^13.11.1",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "ts-loader": "^7.0.0",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "jest": "^25.3.0",
+    "netlify-cli": "^2.46.0",
+    "parcel": "^1.12.4",
+    "typescript": "^3.8.3"
   }
 }
