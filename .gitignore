@@ -1,5 +1,7 @@
 ### https://raw.github.com/github/gitignore//Node.gitignore
 
+.DS_Store
+
 # Logs
 logs
 *.log
