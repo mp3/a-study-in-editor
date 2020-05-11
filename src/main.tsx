@@ -18,14 +18,23 @@ const MyEditor = () => {
     return 'not-handled'
   }
 
-  return <Editor
-    editorState={editorState}
-    onChange={(state) => {
-      console.log(convertToRaw(state.getCurrentContent()))
-      setEditorState(state)
-    }}
-    handleKeyCommand={handleKeyCommand}
-  />
+  const onBoldClick = () => {
+    setEditorState(RichUtils.toggleInlineStyle(editorState, 'BOLD'))
+  }
+
+  return (
+    <div>
+      <button onClick={onBoldClick}>Bold</button>
+      <Editor
+        editorState={editorState}
+        onChange={(state) => {
+          console.log(convertToRaw(state.getCurrentContent()))
+          setEditorState(state)
+        }}
+        handleKeyCommand={handleKeyCommand}
+      />
+    </div>
+  )
 }
 
 ReactDOM.render(<MyEditor />, document.getElementById('container'))
